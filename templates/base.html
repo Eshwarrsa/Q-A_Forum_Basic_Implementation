@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q&A Forum</title>
+</head>
+<body>
+    <h1>Q&A Forum</h1>
+    <nav>
+        <a href="{% url 'forum:question_list' %}">Home</a> | 
+        <a href="{% url 'forum:add_question' %}">Ask a Question</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

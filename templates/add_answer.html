@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Answer Question: {{ question.title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label>Answer:</label><br>
+        <textarea name="content"></textarea><br><br>
+        <button type="submit">Submit Answer</button>
+    </form>
+    <a href="{% url 'forum:question_detail' question.id %}">Back to Question</a>
+{% endblock %}

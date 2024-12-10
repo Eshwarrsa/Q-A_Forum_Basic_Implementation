@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ question.title }}</h2>
+    <p>{{ question.description }}</p>
+    <p>Asked by: {{ question.author }} on {{ question.created_at }}</p>
+
+    <h3>Answers:</h3>
+    <ul>
+        {% for answer in question.answers.all %}
+            <li>{{ answer.content }} - {{ answer.author }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'forum:add_answer' question.id %}">Add an Answer</a>
+{% endblock %}
